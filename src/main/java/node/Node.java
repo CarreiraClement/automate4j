@@ -3,10 +3,10 @@ package node;
 import java.util.List;
 import org.jetbrains.annotations.UnmodifiableView;
 
-public sealed interface Node<O, V> {
+public sealed interface Node<O, V> permits NodeImpl {
 
   @UnmodifiableView
-  List<Node<O, V>> nexts();
+  List<O> outputs();
 
   V value();
 
